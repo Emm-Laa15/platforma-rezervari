@@ -1,7 +1,7 @@
 const createReservation = asyncHandler(async (req, res) => {
   const { product, start, end } = req.body;
 
-  if (!product || !start || !end) {
+  if (product) {
       res.status(400);
       throw new Error('Va rugam completati toate campurile');
   }

@@ -16,6 +16,7 @@ import ListaRezervari from './pages/listaRezervari'
 import Acasa from './pages/Acasa'
 import RezervareNouaATV from './pages/RezervareNouaATV'
 import ProgramarileMele from './pages/ProgramarileMele'
+import RezervareNouaEbikes from './pages/RezervareNouaEbikes'
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
             <Route path="/calendar-rezervari" element={<CalendarRezervari />} />
             <Route path="/lista-rezervari" element={<ListaRezervari />} />  
             <Route path="/rezervare-noua/ATV1" element={<RezervareNouaATV />} />
+            <Route path="/rezervare-noua/ATV2" element={<RezervareNouaEbikes />} />
             <Route path="/programarile-mele" element={<ProgramarileMele />} />
           </Routes>
         </div>
