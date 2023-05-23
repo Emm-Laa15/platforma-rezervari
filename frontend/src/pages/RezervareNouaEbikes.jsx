@@ -6,13 +6,13 @@ import { useSelector } from 'react-redux';
 import Acasa from './Acasa';
 
 
-const RezervareNouaATV = () => {
+const RezervareNouaEbikes = () => {
   const [start, setStart] = useState(new Date());
   const [end, setEnd] = useState(new Date());
   const [success, setSuccess] = useState(false); 
   const [sumaRon, setSumaRon] = useState(0);
 
-  const [product, setProduct] = useState('ATVPOLARIS');
+  const [product, setProduct] = useState('E-bikes');
   
   
   useEffect(() => {
@@ -23,7 +23,7 @@ const RezervareNouaATV = () => {
   
     // Aplicăm tariful corespunzător
     if (diffHrs >= 24) {
-      calculatedSumaRon = Math.floor(diffHrs / 24) * 400 + (diffHrs % 24 > 0 ? (diffHrs % 24) * 50 : 0);
+      calculatedSumaRon = Math.floor(diffHrs / 24) * 200 + (diffHrs % 24 > 0 ? (diffHrs % 24) * 50 : 0);
     } else {
       calculatedSumaRon = diffHrs * 50;
     }
@@ -57,17 +57,16 @@ const RezervareNouaATV = () => {
     }
   
     const newReservation = {
-      atvModel: product,
-      customerName: nume,
-      email: email,
-      startTime: start.toISOString(),
-      endTime: end.toISOString(),
+      ebikesModel: product ? product : '',
+      customerName: nume ? nume : '',
+      email: email ? email : '',
+      startTime: start.toISOString() ? start.toISOString() : null,
+      endTime: end.toISOString() ? end.toISOString() : null,
      
-      sumaRon: calculatedSumaRon, // folosim suma calculată
-      
+      sumaRon: calculatedSumaRon ? calculatedSumaRon : 0,   
     };
   
-    console.log("Tipul produsului este: " + newReservation.atvModel)
+    console.log("Tipul produsului este: " + newReservation.ebikesModel)
     console.log("Data de start este: " + newReservation.startTime)
     console.log("Data de final este: " + newReservation.endTime)
     console.log("Numele clienti este: " + newReservation.customerName)
@@ -75,7 +74,7 @@ const RezervareNouaATV = () => {
 
     
     try {
-        await axios.post('http://localhost:3001/rezervari/atv', newReservation);
+        await axios.post('http://localhost:3001/rezervari/ebikes', newReservation);
         alert('Rezervare creată cu succes!');
         setProduct('');
         setStart(new Date());
@@ -95,14 +94,14 @@ const RezervareNouaATV = () => {
     :(
     <form onSubmit={handleSubmit}>
     <div className='form-group'>
-          <label htmlFor='atvModel'>Model Vehicul</label>
+          <label htmlFor='EbikesModel'>Model Vehicul</label>
           <select
-            name='atvModel'
-            id='atvModel'
+            name='EbikesModel'
+            id='EbikesModel'
             value={product}
             onChange={event => setProduct(event.target.value)}
           >
-            <option value='ATV1'>ATV POLARIS</option>
+            <option value='ATV2'>E-bikes</option>
             
           </select>
         </div>
@@ -151,7 +150,7 @@ const RezervareNouaATV = () => {
       Tarifele noastre sunt următoarele:
       <ul>
         <li>50 RON pe oră</li>
-        <li>400 RON pentru o zi întreagă (24 ore)</li>
+        <li>200 RON pentru o zi întreagă (24 ore)</li>
       </ul>
       Tariful pentru o zi întreagă se aplică numai dacă rezervi pentru exact la 24 de ore . În caz contrar, tariful pe oră va fi aplicat.
     </p></div>
@@ -164,4 +163,4 @@ const RezervareNouaATV = () => {
   )
 };
 
-export default RezervareNouaATV;
+export default RezervareNouaEbikes;

@@ -6,28 +6,47 @@ import ATV3 from '../imagini/KTM.png'
 import ATV4 from '../imagini/Suzuki-V-Strom.png'
 
 function Acasa() {
-    return (
-      <div className="container-acasa">
-       <Link to='/rezervare-noua/ATV1' className='image'>
-  <img src={ATV1} alt='ATV 1' />
-  <div className="image-overlay">
-    <h1>ATV POLARIS</h1>
-    <h2>Click pentru a rezerva.</h2>
-  </div>
-</Link>
+  return (
+    <div className="container-acasa">
+      <Link to='/rezervare-noua/ATV1' className='image'>
+        <img src={ATV1} alt='ATV 1' />
+        <div className="image-overlay">
+          <h1>ATV POLARIS</h1>
+          <h2>Click pentru a rezerva.</h2>
+        </div>
+      </Link>
 
-        <Link to='/rezervare-noua/ATV2' className='image'>
+      <Link to='/rezervare-noua/ATV2' className='image'>
+        <div className="image">
           <img src={ATV2} alt='ATV 2' />
-        </Link>
-        <Link to='/rezervare-noua/ATV3' className='image'>
-          <img src={ATV3} alt='ATV 3' />
-        </Link>
-        <Link to='/rezervare-noua/ATV4' className='image'>
-          <img src={ATV4} alt='ATV 4' />
-        </Link>
-      </div>
-    )
-  }
-  
+          <div className="image-overlay">
+            <h1>E-bikes</h1>
+            <h2>Click pentru a rezerva.</h2>
+          </div>
+        </div>
+      </Link>
 
-export default Acasa
+      <Link to='/rezervare-noua/ATV3' className='image'>
+        <div className="image">
+          <img src={ATV3} alt='ATV 3' />
+          <div className="image-overlay">
+            <h1>Motoreta</h1>
+            <h2>Click pentru a rezerva.</h2>
+          </div>
+        </div>
+      </Link>
+
+      <Link to='/rezervare-noua/ATV4' className='image'>
+        <div className="image">
+          <img src={ATV4} alt='ATV 4' />
+          <div className="image-overlay">
+            <h1>Motocicleta</h1>
+            <h2>Click pentru a rezerva.</h2>
+          </div>
+        </div>
+      </Link>
+    </div>
+  )
+}
+
+export default Acasa;
