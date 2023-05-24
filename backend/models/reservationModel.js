@@ -1,13 +1,13 @@
-const mongoose = require('mongoose')
-const { v4: uuidv4 } = require('uuid')
+const mongoose = require('mongoose');
+const { v4: uuidv4 } = require('uuid');
 
 const reservationSchema = new mongoose.Schema({
   _id: {
     type: String,
     default: uuidv4,
   },
-  numarClient: { // Adăugat acest câmp nou
-    type: String, // Acesta poate fi String sau Number, în funcție de ce aștepți
+  numarClient: {
+    type: String, // Poate fi String sau Number, în funcție de ce aștepți
     required: false,
   },
   customerName: {
@@ -30,16 +30,28 @@ const reservationSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
-  sumaRon: { // Adăugat acest câmp nou
+  motoretaModel: {
+    type: String,
+    required: false,
+  },
+  motocicletaModel: {
+    type: String,
+    required: false,
+  },
+  ebikesModel: {
+    type: String,
+    required: false,
+  },
+  sumaRon: {
     type: Number, // Presupun că suma este de tip număr
     required: false,
   },
-  telefon: { // Adăugat acest câmp nou
+  telefon: {
     type: String, // Telefonul este de tip string
     required: false,
   },
-})
+});
 
-const Reservation = mongoose.model('Reservation', reservationSchema)
+const Reservation = mongoose.model('Reservation', reservationSchema);
 
-module.exports = Reservation
+module.exports = Reservation;

@@ -17,6 +17,8 @@ import Acasa from './pages/Acasa'
 import RezervareNouaATV from './pages/RezervareNouaATV'
 import ProgramarileMele from './pages/ProgramarileMele'
 import RezervareNouaEbikes from './pages/RezervareNouaEbikes'
+import RezervareNouaMotoreta from './pages/RezervareNouaMotoreta'
+import RezervareNouaMotocicleta from './pages/RezervareNouaMotocicleta'
 
 function App() {
   return (
@@ -51,6 +53,8 @@ function App() {
             <Route path="/lista-rezervari" element={<ListaRezervari />} />  
             <Route path="/rezervare-noua/ATV1" element={<RezervareNouaATV />} />
             <Route path="/rezervare-noua/ATV2" element={<RezervareNouaEbikes />} />
+            <Route path="/rezervare-noua/ATV3" element={<RezervareNouaMotoreta />} />
+            <Route path="/rezervare-noua/ATV4" element={<RezervareNouaMotocicleta />} />
             <Route path="/programarile-mele" element={<ProgramarileMele />} />
           </Routes>
         </div>
