@@ -4,7 +4,7 @@ const motocicleta = require('../models/MotocicletaModel')
 // Obține toate rezervările
 exports.getReservations = async (req, res, next) => {
     try {
-        const reservations = await ebikes.find({});
+        const reservations = await motocicleta.find({});
         res.status(200).json(reservations);
     } catch (error) {
         next(error);
@@ -13,7 +13,7 @@ exports.getReservations = async (req, res, next) => {
 
 // Creează o nouă rezervare
 exports.createReservation = async (req, res, next) => {
-    const newmotocicleta = new ebikes({
+    const newmotocicleta = new motocicleta({
        motocicletaModel: req.body.motocicletaModel,
         customerName: req.body.customerName,
         email: req.body.email,
