@@ -162,6 +162,7 @@ h3 {
   justify-content: center;
 }
 
+
 .btn svg {
   margin-right: 8px;
 }
@@ -568,4 +569,12 @@ h2 {
 
 .text-color {
   color: black;
+}
+
+p {
+  font-size: 14px;
+}
+
+li {
+  font-size: 14px;
 }

@@ -134,29 +134,30 @@ const RezervareNouaMotocicleta = () => {
           />
         </div>
         
-      <div className='form-group'>
-        <label htmlFor='sumaRon'>Suma Ron:</label>
-        <input
-          id='sumaRon'
-          name='sumaRon'
-          type="number"
-          value={sumaRon}
-          onChange={event => setSumaRon(Number(event.target.value))}
-        />
-      
-      </div>
-      <div>
+        <form onSubmit={handleSubmit}>
+  <div className='form-group'>
+    <label htmlFor='sumaRon'>Suma Ron:</label>
+    <input
+      id='sumaRon'
+      name='sumaRon'
+      type="text"
+      value={sumaRon}
+    />
+  </div>
+  <button className='btn' type='submit'>
+    Salvati Date
+  </button>
+  <div>
     <p>
       Tarifele noastre sunt următoarele:
       <ul>
-        <li>80 RON pe oră</li>
-        <li>550 RON pentru o zi întreagă (24 ore)</li>
+        <li>70 RON pe oră</li>
+        <li>500 RON pentru o zi întreagă (24 ore)</li>
       </ul>
       Tariful pentru o zi întreagă se aplică numai dacă rezervi pentru exact la 24 de ore . În caz contrar, tariful pe oră va fi aplicat.
-    </p></div>
-      <button className='btn' type='submit'>
-        Salvati Date
-      </button>
+    </p>
+  </div>
+</form>
     </form>
     )}
     </>
