@@ -11,8 +11,8 @@ const RezervareNouaATV = () => {
   const [end, setEnd] = useState(new Date());
   const [success, setSuccess] = useState(false); 
   const [sumaRon, setSumaRon] = useState(0);
-
   const [product, setProduct] = useState('ATVPOLARIS');
+  
   
   
   useEffect(() => {
@@ -135,20 +135,22 @@ const RezervareNouaATV = () => {
           />
         </div>
         
-      <form onSubmit={handleSubmit}>
-  <div className='form-group'>
-    <label htmlFor='sumaRon'>Suma Ron:</label>
-    <input
-      id='sumaRon'
-      name='sumaRon'
-      type="text"
-      value={sumaRon}
-    />
-  </div>
-  <button className='btn' type='submit'>
-    Salvati Date
-  </button>
-  <div>
+      <div className='form-group'>
+        <label htmlFor='sumaRon'>Suma Ron:</label>
+        <input
+          id='sumaRon'
+          name='sumaRon'
+          type="number"
+          value={sumaRon}
+          readOnly
+        />
+
+      
+      </div>
+      <button className='btn' type='submit'>
+        Salvati Date
+      </button>
+      <div>
     <p>
       Tarifele noastre sunt următoarele:
       <ul>
@@ -156,10 +158,8 @@ const RezervareNouaATV = () => {
         <li>400 RON pentru o zi întreagă (24 ore)</li>
       </ul>
       Tariful pentru o zi întreagă se aplică numai dacă rezervi pentru exact la 24 de ore . În caz contrar, tariful pe oră va fi aplicat.
-    </p>
-  </div>
-</form>
-
+    </p></div>
+      
     </form>
     )}
     </>

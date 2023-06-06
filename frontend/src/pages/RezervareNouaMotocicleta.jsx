@@ -23,9 +23,9 @@ const RezervareNouaMotocicleta = () => {
   
     // Aplicăm tariful corespunzător
     if (diffHrs >= 24) {
-      calculatedSumaRon = Math.floor(diffHrs / 24) * 550 + (diffHrs % 24 > 0 ? (diffHrs % 24) * 50 : 0);
+      calculatedSumaRon = Math.floor(diffHrs / 24) *  600+ (diffHrs % 24 > 0 ? (diffHrs % 24) * 50 : 0);
     } else {
-      calculatedSumaRon = diffHrs * 80;
+      calculatedSumaRon = diffHrs * 150;
     }
   
     setSumaRon(calculatedSumaRon); // actualizăm sumaRon cu valoarea calculată
@@ -51,9 +51,9 @@ const RezervareNouaMotocicleta = () => {
   
     // Aplicăm tariful corespunzător
     if (diffHrs >= 24) {
-      calculatedSumaRon = Math.floor(diffHrs / 24) * 500 + (diffHrs % 24 > 0 ? (diffHrs % 24) * 50 : 0);
+      calculatedSumaRon = Math.floor(diffHrs / 24) * 400 + (diffHrs % 24 > 0 ? (diffHrs % 24) * 50 : 0);
     } else {
-      calculatedSumaRon = diffHrs * 70;
+      calculatedSumaRon = diffHrs * 50;
     }
   
     const newReservation = {
@@ -101,7 +101,7 @@ const RezervareNouaMotocicleta = () => {
             value={product}
             onChange={event => setProduct(event.target.value)}
           >
-            <option value='ATV3'>Motocicleta</option>
+            <option value='ATV2'>Motocicleta</option>
             
           </select>
         </div>
@@ -134,30 +134,30 @@ const RezervareNouaMotocicleta = () => {
           />
         </div>
         
-        <form onSubmit={handleSubmit}>
-  <div className='form-group'>
-    <label htmlFor='sumaRon'>Suma Ron:</label>
-    <input
-      id='sumaRon'
-      name='sumaRon'
-      type="text"
-      value={sumaRon}
-    />
-  </div>
-  <button className='btn' type='submit'>
-    Salvati Date
-  </button>
-  <div>
+      <div className='form-group'>
+        <label htmlFor='sumaRon'>Suma Ron:</label>
+        <input
+          id='sumaRon'
+          name='sumaRon'
+          type="number"
+          value={sumaRon}
+          readOnly
+        />
+      
+      </div>
+      <button className='btn' type='submit'>
+        Salvati Date
+      </button>
+      <div>
     <p>
       Tarifele noastre sunt următoarele:
       <ul>
-        <li>70 RON pe oră</li>
-        <li>500 RON pentru o zi întreagă (24 ore)</li>
+        <li>150 RON pe oră</li>
+        <li>600 RON pentru o zi întreagă (24 ore)</li>
       </ul>
       Tariful pentru o zi întreagă se aplică numai dacă rezervi pentru exact la 24 de ore . În caz contrar, tariful pe oră va fi aplicat.
-    </p>
-  </div>
-</form>
+    </p></div>
+      
     </form>
     )}
     </>
